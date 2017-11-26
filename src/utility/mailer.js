@@ -15,14 +15,30 @@ function setup() {
 
 export function sendConfirmationEmail(user) {
   const transport = setup();
-  const email     = {
+  const email = {
     from,
-    to     : user.email,
+    to: user.email,
     subject: "Welcome to BookWorm",
-    text   : `
+    text: `
     Welcome to BookWorm. Please confirm your email.
 
     ${user.generateConfirmationURL()}
+    `
+  };
+
+  transport.sendMail(email);
+}
+
+export function sendResetPasswordEmail(user) {
+  const transport = setup();
+  const email = {
+    from,
+    to: user.email,
+    subject: "Reset Password",
+    text: `
+    Follow this link to reset your password.
+
+    ${user.generateResetPasswordURL()}
     `
   };
 
