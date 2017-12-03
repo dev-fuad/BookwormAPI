@@ -59,7 +59,6 @@ router.post("/reset_password", (req, res) => {
     if (err) {
       res.status(401).json({ errors: { global: "Invalid token" } });
     } else {
-      // eslint-disable-next-line
       User.findOne({ _id: decoded._id }).then(user => {
         if (user) {
           user.setPassword(password);

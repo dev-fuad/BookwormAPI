@@ -5,11 +5,13 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node -- src/index.js",
+    "build": "babel src -d dist --source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Fuad Mohammed Firoz",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
@@ -18,7 +20,9 @@
     "lodash": "^4.17.4",
     "mongoose": "^4.13.1",
     "mongoose-unique-validator": "^1.0.6",
-    "nodemailer": "^4.4.0"
+    "nodemailer": "^4.4.0",
+    "request-promise": "^4.2.2",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

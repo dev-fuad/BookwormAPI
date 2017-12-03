@@ -30,6 +30,7 @@
         ]
       }
     ],
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "no-underscore-dangle": [1, { "allow": ["_id"] }]
   }
 }
