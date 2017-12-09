@@ -18,6 +18,13 @@ router.post("/", (req, res) => {
     .catch(err => res.status(400).json({ errors: parser(err.errors) }));
 });
 
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  Book.findByIdAndRemove(id)
+    .then(book => res.json({ book }))
+    .catch(err => res.status(400).json({ errors: parser(err.errors) }));
+});
+
 router.get("/search", (req, res) => {
   request
     .get(
