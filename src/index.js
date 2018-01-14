@@ -23,7 +23,11 @@ app.use("/api/user", user);
 app.use("/api/books", books);
 
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.send(`
+  <div>
+    <h1>Welcome to Bookworm</h1>
+  </div>
+  `);
 });
 
-app.listen(8080, () => console.log('listening on port: 8080'));
+module.exports = app;
